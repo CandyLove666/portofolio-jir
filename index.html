@@ -163,12 +163,35 @@
       <div class="contact-grid">
         <div class="card">
           <p class="muted">Ingin bekerja sama atau menanyakan sesuatu? Kirim pesan singkat — saya akan membalas secepatnya.</p>
-          <form onsubmit="handleSubmit(event)">
-            <input type="text" name="name" placeholder="Nama" required />
-            <input type="email" name="email" placeholder="Email" required />
-            <textarea name="message" rows="5" placeholder="Pesan" required></textarea>
-            <button type="submit">Kirim Pesan</button>
-          </form>
+          <form action="https://formspree.io/f/xanpdprv" method="POST">
+  <input type="text" name="nama" placeholder="Nama Kamu" required>
+  <input type="email" name="email" placeholder="Email Kamu" required>
+  <textarea name="pesan" placeholder="Tulis pesan di sini..." required></textarea>
+  <button type="submit">Kirim Pesan</button>
+  <p id="hasil"></p>
+</form>
+
+<script>
+  const form = document.querySelector("form");
+  const hasil = document.getElementById("hasil");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const res = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { Accept: "application/json" },
+    });
+
+    if (res.ok) {
+      hasil.innerText = "✅ Pesan terkirim! Terima kasih 🙌";
+      form.reset();
+    } else {
+      hasil.innerText = "❌ Terjadi kesalahan, coba lagi.";
+    }
+  });
+</script>
         </div>
 
         <aside class="card" style="display:flex;flex-direction:column;justify-content:center;gap:10px">
