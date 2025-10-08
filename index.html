@@ -212,15 +212,5 @@
       <div class="muted">© 2025 Nama Anda. All rights reserved.</div>
     </footer>
   </div>
-
-  <script>
-    function handleSubmit(e){
-      e.preventDefault();
-      const form = e.target;
-      const subject = encodeURIComponent('Portofolio: pesan dari ' + form.name.value.trim());
-      const body = encodeURIComponent('Nama: '+form.name.value+'\nEmail: '+form.email.value+'\n\n'+form.message.value);
-      window.location.href = `mailto:nama@example.com?subject=${subject}&body=${body}`;
-    }
-  </script>
 </body>
 </html>
