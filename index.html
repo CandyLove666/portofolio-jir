@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio — Nama Anda</title>
+  <meta name="description" content="Portofolio modern — Nama Anda. Frontend Developer / UI Designer / dsb." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1100px;
+      --shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#071023 0%, var(--bg) 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .container{width:100%; max-width:var(--max-width)}
+
+    .nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:grid;place-items:center;font-weight:700;color:white}
+    .brand h1{font-size:16px;margin:0}
+    .navlinks{display:flex;gap:18px}
+    .navlinks a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:linear-gradient(90deg,var(--accent),#4f46e5);padding:10px 14px;border-radius:10px;text-decoration:none;color:white;font-weight:700}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:36px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:26px;border-radius:var(--radius);box-shadow:var(--shadow);}
+    .intro h2{margin:0 0 8px 0;font-size:28px}
+    .intro p{color:var(--muted);margin:0 0 16px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--muted)}
+
+    .profile{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+    .avatar{width:160px;height:160px;border-radius:50%;object-fit:cover;box-shadow:0 4px 20px rgba(0,0,0,0.5)}
+    .meta small{color:var(--muted)}
+
+    .section{margin-bottom:36px}
+    .section h3{margin:0 0 18px 0}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+    .project h4{margin:0 0 8px}
+    .project p{color:var(--muted);font-size:14px;margin:0 0 12px}
+    .project .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--muted)}
+    .project a{margin-top:10px;display:inline-block;text-decoration:none;font-weight:700;color:var(--accent)}
+
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    form{display:flex;flex-direction:column;gap:12px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:inherit;font-family:inherit}
+    button{background:var(--accent);border:none;padding:12px 14px;border-radius:10px;color:white;font-weight:700;cursor:pointer}
+
+    footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
+
+    @media (max-width:980px){
+      .hero,.contact-grid{grid-template-columns:1fr}
+      .projects{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      body{padding:20px}
+      .projects{grid-template-columns:1fr}
+      .navlinks{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <div class="brand">
+        <img src="zokowi.png" alt="Foto Profil" class="avatar" />
+        <div>
+          <h1>Muhammad Fahri Abrar</h1>
+          <div class="muted">Frontend Developer • UI/UX</div>
+        </div>
+      </div>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="cta" href="#contact">Hire me</a>
+    </nav>
+
+    <section class="hero">
+      <div class="card intro">
+        <h2>Halo — saya Muhammad Fahri Abrar</h2>
+        <p>Saya membuat antarmuka yang rapi dan berfokus pada pengguna. Spesialis di HTML, CSS, dan React. Berikut beberapa proyek yang saya kerjakan.</p>
+        <div class="skills">
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">React</div>
+          <div class="skill">Figma</div>
+        </div>
+        <div class="row" style="margin-top:14px">
+          <a class="cta" href="#projects">Lihat proyek</a>
+          <a href="#contact" style="text-decoration:none;color:var(--muted);font-weight:700;margin-left:8px">Unduh CV</a>
+        </div>
+      </div>
+
+      <aside class="card profile">
+        <img src="zokowi.png" alt="Foto Profil" class="avatar" />
+        <div class="meta">
+          <h4 style="margin:6px 0 4px 0">Muhammad Fahri Abrar</h4>
+          <small class="muted">Frontend Developer</small>
+          <div style="height:12px"></div>
+          <div class="row">
+            <a href="https://github.com/CandyLove666" title="GitHub" style="text-decoration:none;color:var(--muted);font-weight:700">GitHub</a>
+            <a href="#" title="LinkedIn" style="text-decoration:none;color:var(--muted);font-weight:700">LinkedIn</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" class="section">
+      <h3>Selected Projects</h3>
+      <div class="projects">
+        <article class="project card">
+          <h4>Project One</h4>
+          <p>Sebuah aplikasi web untuk memanajemen tugas dengan antarmuka minimalis dan performa cepat.</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">Tailwind</span></div>
+          <a href="#">Lihat detail →</a>
+        </article>
+
+        <article class="project card">
+          <h4>Project Two</h4>
+          <p>Landing page produk responsif dengan fokus konversi dan aksesibilitas.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+          <a href="https://candylove666.github.io/webapayak/">Lihat detail →</a>
+        </article>
+
+        <article class="project card">
+          <h4>Project Three</h4>
+          <p>Dashboard admin interaktif untuk analitik bisnis real-time.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">Chart</span></div>
+          <a href="#">Lihat detail →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h3>Contact</h3>
+      <div class="contact-grid">
+        <div class="card">
+          <p class="muted">Ingin bekerja sama atau menanyakan sesuatu? Kirim pesan singkat — saya akan membalas secepatnya.</p>
+          <form onsubmit="handleSubmit(event)">
+            <input type="text" name="name" placeholder="Nama" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea name="message" rows="5" placeholder="Pesan" required></textarea>
+            <button type="submit">Kirim Pesan</button>
+          </form>
+        </div>
+
+        <aside class="card" style="display:flex;flex-direction:column;justify-content:center;gap:10px">
+          <div><strong>Alamat</strong><div class="muted">Kota, Negara</div></div>
+          <div><strong>Email</strong><div class="muted">nama@example.com</div></div>
+          <div><strong>Telepon</strong><div class="muted">+62 8xx xxxx xxxx</div></div>
+          <div style="height:6px"></div>
+          <div class="row">
+            <a href="#" style="text-decoration:none;color:var(--muted)">GitHub</a>
+            <a href="#" style="text-decoration:none;color:var(--muted)">Dribbble</a>
+            <a href="#" style="text-decoration:none;color:var(--muted)">LinkedIn</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div class="muted">© 2025 Nama Anda. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const form = e.target;
+      const subject = encodeURIComponent('Portofolio: pesan dari ' + form.name.value.trim());
+      const body = encodeURIComponent('Nama: '+form.name.value+'\nEmail: '+form.email.value+'\n\n'+form.message.value);
+      window.location.href = `mailto:nama@example.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
